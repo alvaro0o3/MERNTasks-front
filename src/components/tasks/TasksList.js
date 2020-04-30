@@ -1,0 +1,61 @@
+import React, { Fragment, useContext } from 'react';
+import Task from './Task';
+
+import projectContext from '../../context/projects/projectContext';
+import TaskContext from '../../context/tasks/taskContext';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+const TasksList = () => {
+
+    // Obtener el proyecto actual del state de los proyectos
+    const proyectoContext = useContext(projectContext);
+    const { actualProject, deleteProject } = proyectoContext;
+
+    // Obtener las tareas del proyecto actual del state de tareas
+    const tareaContext = useContext(TaskContext);
+    const { projectTasks } = tareaContext;
+
+    if (!actualProject) return <h2>Selecciona un proyecto</h2>;
+
+    return (
+        <Fragment>
+            <h2>Proyecto: {actualProject.nombre}</h2>
+
+            <ul className="listado-tareas">
+                {
+                    projectTasks.length === 0
+                        ? (<li className="tarea"><p>No hay tareas</p></li>)
+                        : <TransitionGroup>
+                            {projectTasks.map(task => (
+                                <CSSTransition
+                                    key={task._id}
+                                    timeout={200}
+                                    classNames="tarea"
+                                >
+                                    <Task
+                                        task={task}
+
+                                    />
+                                </CSSTransition>
+                            ))}
+                        </TransitionGroup>
+                }
+
+
+            </ul>
+            <div className="text-center">
+                <button
+                    type="button"
+                    className="btn btn-eliminar btn-primario"
+                    onClick={() => deleteProject(actualProject._id)}
+                >
+                    Eliminar proyecto &times;
+                </button>
+            </div>
+
+
+        </Fragment>
+    );
+}
+
+export default TasksList;
