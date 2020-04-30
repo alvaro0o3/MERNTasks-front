@@ -307,7 +307,7 @@ aside  {
 }
 
 .contenedor-form {
-    padding: 5rem 3rem;
+    padding: 5rem 8rem;
     max-width: 500px;
     width: 95%;
     background-color: var(--blanco);
@@ -332,6 +332,7 @@ aside  {
   border: 1px solid #e1e1e1;
   padding: 1rem;
   flex: 1;
+  border-radius: 4px;
 }
 
 .enlace-cuenta {

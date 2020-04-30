@@ -83,7 +83,7 @@ const Register = (props) => {
                     onSubmit={handleSubmit}
                 >
                     <div className="campo-form">
-                        <label htmlFor="nombre">Nombre</label>
+                        {/* <label htmlFor="nombre">Nombre</label> */}
                         <input
                             type="text"
                             id="nombre"
@@ -94,7 +94,7 @@ const Register = (props) => {
                         />
                     </div>
                     <div className="campo-form">
-                        <label htmlFor="email">Email</label>
+                        {/* <label htmlFor="email">Email</label> */}
                         <input
                             type="email"
                             id="email"
@@ -105,7 +105,7 @@ const Register = (props) => {
                         />
                     </div>
                     <div className="campo-form">
-                        <label htmlFor="password">Contraseña</label>
+                        {/* <label htmlFor="password">Contraseña</label> */}
                         <input
                             type="password"
                             id="password"
@@ -116,12 +116,12 @@ const Register = (props) => {
                         />
                     </div>
                     <div className="campo-form">
-                        <label htmlFor="passwordconfirm">Repite la contraseña</label>
+                        {/* <label htmlFor="passwordconfirm">Repite la contraseña</label> */}
                         <input
                             type="password"
                             id="passwordconfirm"
                             name="passwordconfirm"
-                            placeholder="Contraseña"
+                            placeholder="Repite la contraseña"
                             value={passwordconfirm}
                             onChange={handleChange}
                         />
