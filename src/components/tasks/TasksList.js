@@ -28,22 +28,23 @@ const TasksList = () => {
 
             <ul className="listado-tareas">
                 {
-                    projectTasks.length === 0
-                        ? (<li className="tarea"><p>No hay tareas</p></li>)
-                        :
-                        spinner
+
+                    spinner
                         ? <Spinner />
-                        : (
-                            projectTasks.map(task => (
+                        : projectTasks.length === 0
+                            ? (<li className="tarea"><p>No hay tareas</p></li>)
+                            :
+                            (
+                                projectTasks.map(task => (
 
-                                <Task
-                                    task={task}
-                                    key={task._id}
-                                    className="tarea"
-                                />
+                                    <Task
+                                        task={task}
+                                        key={task._id}
+                                        className="tarea"
+                                    />
 
-                            ))
-                        )
+                                ))
+                            )
 
                 }
 
