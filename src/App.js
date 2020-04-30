@@ -8,6 +8,7 @@ import ProjectState from './context/projects/projectState';
 import TaskState from './context/tasks/taskState';
 import AlertState from './context/alerts/alertState';
 import AuthState from './context/auth/authState';
+import SpinnerState from './context/spinner/spinnerState';
 import authToken from './config/token';
 import PrivateRoute from './components/routes/PrivateRoute';
 
@@ -23,13 +24,15 @@ function App() {
       <TaskState>
         <AlertState>
           <AuthState>
-            <Router>
-              <Switch>
-                <Route exact path="/" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <PrivateRoute exact path="/projects" component={Projects} />
-              </Switch>
-            </Router>
+            <SpinnerState>
+              <Router>
+                <Switch>
+                  <Route exact path="/" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                  <PrivateRoute exact path="/projects" component={Projects} />
+                </Switch>
+              </Router>
+            </SpinnerState>
           </AuthState>
         </AlertState>
       </TaskState>

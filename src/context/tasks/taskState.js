@@ -68,7 +68,7 @@ const TaskState = props => {
     // Borra una tarea por su ID
     const deleteTask = async (taskID, projectID) => {
         try {
-            const response = await clienteAxios.delete(`/API/tasks/${taskID}`, { params: { projectID } });
+            await clienteAxios.delete(`/API/tasks/${taskID}`, { params: { projectID } });
 
             dispatch({
                 type: DELETE_TAREA,

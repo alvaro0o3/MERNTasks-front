@@ -1,9 +1,10 @@
 import React, { Fragment, useContext } from 'react';
 import Task from './Task';
+import Spinner from '../layout/Spinner';
 
 import projectContext from '../../context/projects/projectContext';
 import TaskContext from '../../context/tasks/taskContext';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import SpinnerContext from '../../context/spinner/spinnerContext';
 
 const TasksList = () => {
 
@@ -14,6 +15,10 @@ const TasksList = () => {
     // Obtener las tareas del proyecto actual del state de tareas
     const tareaContext = useContext(TaskContext);
     const { projectTasks } = tareaContext;
+
+    // Control del spinner
+    const spinnerContext = useContext(SpinnerContext);
+    const { spinner } = spinnerContext;
 
     if (!actualProject) return <h2>Selecciona un proyecto</h2>;
 
@@ -26,7 +31,9 @@ const TasksList = () => {
                     projectTasks.length === 0
                         ? (<li className="tarea"><p>No hay tareas</p></li>)
                         :
-                        (
+                        spinner
+                        ? <Spinner />
+                        : (
                             projectTasks.map(task => (
 
                                 <Task

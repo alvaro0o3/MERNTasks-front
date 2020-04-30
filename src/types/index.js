@@ -27,3 +27,7 @@ export const GET_USUARIO = 'GET_USUARIO';
 export const LOGIN_OK = 'LOGIN_OK';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const CERRAR_SESION = 'CERRAR_SESION';
+
+// SPINNER TYPES
+export const SHOW_SPINNER = 'SHOW_SPINNER';
+export const HIDE_SPINNER = 'HIDE_SPINNER';
