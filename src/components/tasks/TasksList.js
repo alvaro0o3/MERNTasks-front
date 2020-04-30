@@ -25,20 +25,19 @@ const TasksList = () => {
                 {
                     projectTasks.length === 0
                         ? (<li className="tarea"><p>No hay tareas</p></li>)
-                        : <TransitionGroup>
-                            {projectTasks.map(task => (
-                                <CSSTransition
-                                    key={task._id}
-                                    timeout={200}
-                                    classNames="tarea"
-                                >
-                                    <Task
-                                        task={task}
+                        :
+                        (
+                            projectTasks.map(task => (
 
-                                    />
-                                </CSSTransition>
-                            ))}
-                        </TransitionGroup>
+                                <Task
+                                    task={task}
+                                    key={task._id}
+                                    className="tarea"
+                                />
+
+                            ))
+                        )
+
                 }
 
 

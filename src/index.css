@@ -275,7 +275,7 @@ aside  {
   color: var(--blanco);
 }
 
-.tarea-enter,
+/* .tarea-enter,
 .proyecto-enter {
   opacity: 0;
 }
@@ -292,7 +292,7 @@ aside  {
 .proyecto-exit-active {
   opacity: 0;
   transition: opacity 200ms;
-}
+} */
 
 .form-usuario {
     height: 100vh;
