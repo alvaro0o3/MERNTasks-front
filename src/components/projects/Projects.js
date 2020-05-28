@@ -1,6 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import Sidebar from '../layout/Sidebar';
-import Header from '../layout/Header';
+import React, { useContext, useEffect } from 'react';
+import Layout from '../../components/layout/Layout';
 import FormTasks from '../tasks/FormTasks';
 import TasksList from '../tasks/TasksList';
 import AuthContext from '../../context/auth/authContext';
@@ -14,30 +13,18 @@ const Projects = () => {
     useEffect(() => {
 
         getUserAuth();
-        
+
         // eslint-disable-next-line
     }, [])
 
     return (
-        <div className="contenedor-app">
-            
-            <Sidebar/>
+        <Layout>
+            <FormTasks />
 
-            <div className="seccion-principal">
-
-                <Header />
-
-                <main>
-
-                    <FormTasks />
-                    
-                    <div className="contenedor-tareas">
-                        <TasksList />
-                    </div>
-                </main>
-
+            <div className="contenedor-tareas">
+                <TasksList />
             </div>
-        </div>
+        </Layout>
     );
 }
 

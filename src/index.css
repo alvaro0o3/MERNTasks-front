@@ -60,6 +60,7 @@ a {
   border-radius: .5rem;
   border: none;
   transition: background-color .3s ease;
+  outline: none;
 }
 .btn:hover {
   cursor: pointer;
@@ -485,4 +486,70 @@ aside  {
     transform: scale(1.0);
     opacity: 0;
   }
+}
+
+.navbar {
+  background-color: var(--gris2);
+    border-radius: 2px;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: var(--gris2);
+  text-decoration: none;
+  font-size: 17px;
+  background-color:var(--gris1);
+  border: 1px solid var(--gris1);
+}
+
+.navbar a:hover {
+  background-color: var(--gris2);
+  color: var(--gris1);
+  border-color: var(--gris1);
+}
+
+.navbar a.active {
+  background-color: var(--gris2);
+  color: var(--gris1);
+  border: 1px solid var(--gris1);
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.table-container {
+  padding: 0 3rem;
+  margin-top: 3rem;
+}
+
+.MuiTableCell-root {
+  font-size: 15px!important;
+}
+
+.navbtn {
+    background: var(--gris1);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 0.7rem;
+    margin: 0 15px 0px 0;
+    outline: transparent;
+}
+.navbtn i {
+  color: var(--gris2);
+    font-size: 1.9rem;
+}
+
+.navbtn:hover {
+  background: var(--gris2);
+}
+
+.navbtn:hover i {
+  color: var(--gris1);
 }

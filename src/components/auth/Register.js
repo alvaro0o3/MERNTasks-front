@@ -65,7 +65,8 @@ const Register = (props) => {
         register({
             nombre,
             email,
-            password
+            password, 
+            admin: false
         });
     }
 

@@ -1,7 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import AuthContext from '../../context/auth/authContext';
 import ProjectContext from '../../context/projects/projectContext';
 import TaskContext from '../../context/tasks/taskContext';
+import Navbar from './Navbar';
+import imglogout from '../../../src/logout.png';
+import imgeditprofile from '../../../src/user.png';
 
 const Header = () => {
 
@@ -19,11 +22,11 @@ const Header = () => {
     useEffect(() => {
 
         getUserAuth();
-        
+
         // eslint-disable-next-line
     }, [])
 
-    const handleCLick = () => {
+    const handleCLickLogout = () => {
         logout();
         setActualProject(null);
         cleanTasks();
@@ -32,11 +35,16 @@ const Header = () => {
     return (
         <header className="app-header">
             {user ? <p className="nombre-usuario">Hola <span>{user.nombre}</span></p> : null}
+            <Navbar />
             <nav className="nav-principal">
                 <button
-                    className="btn btn-blank cerrar-sesion"
-                    onClick={ handleCLick }
-                >Cerrar sesión</button>
+                    className="btn navbtn "
+                    //onClick={handleCLickLogout}
+                ><i className="fa fa-user-edit"></i></button>
+                <button
+                    className="btn navbtn "
+                    onClick={handleCLickLogout}
+                ><i className="fa fa-sign-out-alt"></i></button>
             </nav>
         </header>
     );

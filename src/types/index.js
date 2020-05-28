@@ -31,3 +31,6 @@ export const CERRAR_SESION = 'CERRAR_SESION';
 // SPINNER TYPES
 export const SHOW_SPINNER = 'SHOW_SPINNER';
 export const HIDE_SPINNER = 'HIDE_SPINNER';
+
+// ADMIN USERS TYPES
+export const GET_USERS = 'GET_USERS';

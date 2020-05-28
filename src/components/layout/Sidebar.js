@@ -1,18 +1,21 @@
 import React from 'react';
-import FormNewProject from '../projects/FormNewProject';
-import ProjectsList from '../projects/ProjectsList';
+import { useLocation } from 'react-router-dom'
+import SidebarUser from './SidebarUser';
 
 const Sidebar = () => {
+
+    let location = useLocation();
+
     return (
         <aside>
             <h1>MERN<span>Tasks</span></h1>
 
-            <FormNewProject />
+            {
+                location.pathname === '/projects'
+                ? <SidebarUser />
+                : null
+            }
 
-            <div className="proyectos">
-                <h2>Tus proyectos</h2>
-                <ProjectsList />
-            </div>
         </aside>
     );
 }
