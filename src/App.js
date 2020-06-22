@@ -14,6 +14,7 @@ import UsersState from './context/users/usersState';
 import authToken from './config/token';
 import PrivateRoute from './components/routes/PrivateRoute';
 import PrivateRouteAdmin from './components/routes/PrivateRouteAdmin';
+import UpdateUser from './components/users/UpdateUser';
 
 // Revisar si hay token
 const token = localStorage.getItem('token');
@@ -23,10 +24,11 @@ if (token) {
 
 function App() {
   return (
-    <UsersState>
-      <ProjectState>
-        <TaskState>
-          <AlertState>
+
+    <ProjectState>
+      <TaskState>
+        <AlertState>
+          <UsersState>
             <AuthState>
               <SpinnerState>
                 <Router>
@@ -35,15 +37,17 @@ function App() {
                     <Route exact path="/register" component={Register} />
 
                     <PrivateRoute exact path="/projects" component={Projects} />
+                    <PrivateRoute exact path="/update-user/:id" component={UpdateUser} />
                     <PrivateRouteAdmin exact path="/users" component={Users} />
                   </Switch>
                 </Router>
               </SpinnerState>
             </AuthState>
-          </AlertState>
-        </TaskState>
-      </ProjectState>
-    </UsersState>
+          </UsersState>
+        </AlertState>
+      </TaskState>
+    </ProjectState>
+
   );
 }
 

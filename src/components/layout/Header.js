@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import AuthContext from '../../context/auth/authContext';
 import ProjectContext from '../../context/projects/projectContext';
 import TaskContext from '../../context/tasks/taskContext';
 import Navbar from './Navbar';
-import imglogout from '../../../src/logout.png';
-import imgeditprofile from '../../../src/user.png';
 
 const Header = () => {
 
@@ -22,9 +21,10 @@ const Header = () => {
     useEffect(() => {
 
         getUserAuth();
-
         // eslint-disable-next-line
     }, [])
+
+    if (!user) return null
 
     const handleCLickLogout = () => {
         logout();
@@ -37,10 +37,10 @@ const Header = () => {
             {user ? <p className="nombre-usuario">Hola <span>{user.nombre}</span></p> : null}
             <Navbar />
             <nav className="nav-principal">
-                <button
+                <NavLink
                     className="btn navbtn "
-                    //onClick={handleCLickLogout}
-                ><i className="fa fa-user-edit"></i></button>
+                    to={`/update-user/${user._id}`}
+                ><i className="fa fa-user-edit"></i></NavLink>
                 <button
                     className="btn navbtn "
                     onClick={handleCLickLogout}

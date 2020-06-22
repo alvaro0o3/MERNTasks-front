@@ -10,6 +10,7 @@ import {
     LOGIN_OK,
     LOGIN_ERROR,
     CERRAR_SESION,
+    SET_USER
 } from '../../types';
 
 const AuthState = props => {
@@ -109,6 +110,15 @@ const AuthState = props => {
         })
     }
 
+    const setUser = user => {
+        dispatch({
+            type: SET_USER,
+            payload: user
+        })
+    }
+
+    
+
     return(
         <AuthContext.Provider
             value={{
@@ -120,7 +130,8 @@ const AuthState = props => {
                 register,
                 login,
                 getUserAuth,
-                logout
+                logout,
+                setUser
             }}
         >
             {props.children}

@@ -1,13 +1,19 @@
-import { 
-    GET_USERS
+import {
+    GET_USERS,
+    UPDATE_USER
 } from '../../types';
 
 export default (state, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case GET_USERS:
             return {
                 ...state,
                 users: action.payload
+            }
+        case UPDATE_USER:
+            return {
+                ...state,
+                userLogged: action.payload
             }
         default:
             return state;

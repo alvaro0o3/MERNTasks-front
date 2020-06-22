@@ -34,3 +34,5 @@ export const HIDE_SPINNER = 'HIDE_SPINNER';
 
 // ADMIN USERS TYPES
 export const GET_USERS = 'GET_USERS';
+export const UPDATE_USER = 'UPDATE_USER';
+export const SET_USER = 'SET_USER';

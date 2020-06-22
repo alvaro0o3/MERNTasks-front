@@ -370,7 +370,7 @@ aside  {
 }
 
 .alerta {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   padding: 1rem 3rem;
@@ -418,45 +418,6 @@ aside  {
   width: 100%;
   transition: width 1000ms;
 }
-
-/* SPINNER */
-/* .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  margin-left: 260px;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #1a202d;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #1a202d transparent transparent transparent;
-  
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
 
 .spinner {
   width: 40px;
@@ -535,15 +496,14 @@ aside  {
 .navbtn {
     background: var(--gris1);
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    min-height: 35px;
+    min-width: 35px;
     padding: 0.7rem;
     margin: 0 15px 0px 0;
     outline: transparent;
 }
 .navbtn i {
   color: var(--gris2);
-    font-size: 1.9rem;
 }
 
 .navbtn:hover {
@@ -551,5 +511,55 @@ aside  {
 }
 
 .navbtn:hover i {
+  color: var(--gris1);
+}
+
+/*Formulario para editar perfil*/
+.formulario-perfil {
+  background-color: var(--gris1);
+}
+.formulario-perfil form {
+  max-width: 600px;
+  margin: 1.5rem auto 0px auto;
+}
+.contenedor-perfil {
+  position: relative;
+  padding-top: 6rem;
+}
+
+.campo-form-perfil {
+  display: block;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.campo-form-perfil:last-of-type {
+  margin: 0;
+}
+.campo-form-perfil label {
+  font-family: var(--headingFont);
+  margin-bottom: 2rem;
+  /* font-family: var(--textFont); */
+}
+
+.campo-form-perfil input {
+  margin-top: 1rem;
+}
+.campo-form-perfil input[type="password"],
+.campo-form-perfil input[type="email"], 
+.campo-form-perfil input[type="text"] {
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+form span {
+  font-size: 12px;
+}
+
+.nav-principal a.active {
+  background-color: var(--gris2);
+}
+
+.nav-principal a.active i {
   color: var(--gris1);
 }

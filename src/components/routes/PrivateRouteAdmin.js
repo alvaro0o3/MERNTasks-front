@@ -6,7 +6,7 @@ const PrivateRouteAdmin = ({ component: Component, ...props }) => {
 
     // Extraer funciones del registro
     const authContext = useContext(AuthContext);
-    const { auth, loading, user, getUserAuth } = authContext;
+    const { auth, loading, getUserAuth } = authContext;
 
     useEffect(() => {
         getUserAuth();

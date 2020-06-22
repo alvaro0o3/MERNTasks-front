@@ -5,6 +5,7 @@ import {
     LOGIN_OK,
     LOGIN_ERROR,
     CERRAR_SESION,
+    SET_USER
 } from '../../types';
 
 export default (state, action) => {
@@ -27,6 +28,7 @@ export default (state, action) => {
                 loading: false
             }
         case GET_USUARIO:
+
             return {
                 ...state,
                 auth: true,
@@ -40,6 +42,11 @@ export default (state, action) => {
                 user: null,
                 msg: null,
                 loading: false
+            }
+        case SET_USER:
+            return {
+                ...state,
+                user: action.payload
             }
         default:
             return state;
