@@ -44,7 +44,7 @@ const UpdateUser = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(userLogged)
+
         // Validaciones
         if (nombre.trim() === '' || email.trim() === '') {
             console.log('alerta')
